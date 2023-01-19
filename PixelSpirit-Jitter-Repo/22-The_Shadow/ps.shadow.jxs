@@ -1,5 +1,5 @@
-<jittershader name="The Stone">
-<description>Pixel Spirits 'The Stone' card</description>
+<jittershader name="The Shadow">
+<description>Pixel Spirits 'The Shadow' card</description>
 
 <param name="modelViewProjectionMatrix" type="mat4" state="MODELVIEW_PROJECTION_MATRIX" />
 <param name="textureMatrix0" type="mat4" state="TEXTURE0_MATRIX" />
@@ -136,10 +136,11 @@ void main(void)
 	// From Patrico Gonzalez https://github.com/patriciogonzalezvivo/PixelSpiritDeck/tree/master/00-elements
 	st = getOrientation(st); // Adjusts the screenspace according to whether the viewport is protrait or landscape?
 
-	st = rotate(st,radians(45.));
-	color += fill(rectSDF(st,vec2(1.)),.4);
-	color *= 1.-stroke(st.x,.5,.02);
-	color *= 1.-stroke(st.y,.5,.02);
+	st = rotate(vec2(st.x,1.0-st.y),radians(45.));
+	vec2 s = vec2(1.);
+	color += fill(rectSDF(st-.025,s),.4);
+	color += fill(rectSDF(st+.025,s),.4);
+	color *= step(.38,rectSDF(st+.025,s));
 
 	outColor = vec4(color,1.);
 }

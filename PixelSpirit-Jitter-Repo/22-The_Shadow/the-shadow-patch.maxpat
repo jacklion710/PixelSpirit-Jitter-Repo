@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 1082.0, 361.0, 640.0, 501.0 ],
+		"rect" : [ 1082.0, 383.0, 640.0, 479.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -573,8 +573,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_gl_texture", "" ],
-					"patching_rect" : [ 257.0, 239.0, 169.0, 22.0 ],
-					"text" : "jit.gl.slab @file ps.diamond.jxs"
+					"patching_rect" : [ 257.0, 239.0, 164.0, 22.0 ],
+					"text" : "jit.gl.slab @file ps.shadow.jxs"
 				}
 
 			}
